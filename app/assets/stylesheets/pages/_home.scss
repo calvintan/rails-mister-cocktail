@@ -1,1 +1,90 @@
 // Specific CSS for your home-page
+body {
+  padding-top: 72px;
+}
+
+main {
+  padding: .5rem 1rem;
+
+  &.homepage {
+    padding: 0;
+  }
+}
+
+.ribbon {
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+
+  p {
+    margin-bottom: 0;
+    font-family: $headers-font;
+  }
+}
+
+.all-recipes {
+  padding: 20px 0;
+}
+
+.recipe-card {
+  text-align: center;
+  margin-bottom: 20px;
+
+  .recipe-card-link {
+    display: inline-block;
+    padding: 20px 0;
+  }
+}
+
+.recipe-card-image {
+  width: 100%;
+  min-height: 200px;
+  background: grey;
+  border-radius: 10px;
+}
+
+.btn-back {
+  display: inline-block;
+  margin: 1rem;
+  margin-left: 10px;
+  font-family: $headers-font;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-edit i {margin-left: 5px;}
+.btn-delete i {margin-left: 5px;}
+
+.solo-recipe {
+  p {
+    letter-spacing: .2px;
+  }
+
+  h1 {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  li {
+    line-height: 1.8;
+  }
+
+  .solo-recipe-desc {
+    font-size: 1.125rem;
+  }
+
+  .solo-recipe-subhead {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+}

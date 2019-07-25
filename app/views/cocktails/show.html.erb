@@ -1,22 +1,41 @@
-<div class="container">
-  <h1><%= @cocktail.name %></h1>
-  <h2>Ingredients</h2>
-  <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+<main>
+  <div class="container">
+    <i class="fas fa-chevron-left"></i><%= link_to "Back to Recipes", cocktails_path, class: "btn-back" %>
+    <div class="solo-recipe">
+      <div class="recipe-card-image"></div>
+      <h1><%= @cocktail.name %></h1>
+      <p class="solo-recipe-desc">These appetisers are super popular right now and very easy to prepare. Try out this refreshing beverage today!</p>
 
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.description %>
-      <%= dose.ingredient.name %>
-      <%= link_to "Delete ingredient", dose_path(dose), method: :delete, data: {confirm: "Are you sure?"} %>
-    </li>
-    <% end %>
-  </ul>
+      <span class="btn btn-outline-secondary btn-edit"><%= link_to "Edit", edit_cocktail_path %><i class="fas fa-pencil-alt"></i></span>
+      <span class="btn btn-outline-danger btn-delete"><%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: {confirm: "Hold up! You are about to delete this recipe, are you sure?"} %><i class="fas fa-trash-alt"></i></span>
 
-  <hr>
+      <h3 class="solo-recipe-subhead">Ingredients</h3>
 
-  <p><%= link_to "Edit", edit_cocktail_path %></p>
-  <p><%= link_to "Delete", cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} %></p>
-  <%= link_to "Back to cocktails", cocktails_path %>
-</div>
+      <% if @cocktail.doses.empty? %>
+        <p><%= "Whoops! Ingredients are missing for this recipe." %></p>
+      <% end %>
+
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.description %>
+          <%= dose.ingredient.name %>
+          <%= link_to "Remove ingredient", dose_path(dose), method: :delete, data: {confirm: "Are you sure you want to remove this ingredient?"} %>
+        </li>
+        <% end %>
+      </ul>
+      <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+
+      <h3 class="solo-recipe-subhead">Preparation</h3>
+      <ol>
+        <li>Add the blueberries, thyme, and simple syrup to a glass and muddle.</li>
+        <li>Add a shot of gin and then fill the glass with ice cubes.</li>
+        <li>Pour over the tonic water and garnish with another sprig of thyme</li>
+        <li>Enjoy!</li>
+      </ol>
+
+
+    </div>
+  </div>
+</main>
 

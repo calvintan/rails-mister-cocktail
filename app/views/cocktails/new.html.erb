@@ -1,8 +1,9 @@
 <div class="container">
-  <%= link_to "Back to cocktails", cocktails_path %>
-  <h1>Add a new cocktail</h1>
+
+  <i class="fas fa-chevron-left"></i><%= link_to "Back to Recipes", cocktails_path, class: "btn-back" %>
+  <h1>Add a new recipe</h1>
   <%= simple_form_for(@cocktail) do |f| %>
     <%= f.input :name %>
-    <%= f.submit %>
+    <%= f.submit "Add recipe" %>
   <% end %>
 </div>

@@ -1,10 +1,28 @@
-<div class="container">
-  <h1>Cocktails!</h1>
-  <%= link_to "Add a cocktail", new_cocktail_path %>
-  <ul>
-    <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-    <% end %>
-  </ul>
-</div>
+<main class="homepage">
+  <section class="banner">
+    <div class="banner-wrapper">
+      <h1>Fruit Punch</h1>
+      <h2>Browse our library of fruity recipes</h2>
+      <input type="search" placeholder="Search by recipe or ingredient">
+    </div>
+  </section>
+  <section class="ribbon">
+    <p>Have a recipe to share? <%= link_to "Contribute a recipe here", new_cocktail_path, class: "" %></p>
+  </section>
+  <section class="all-recipes">
+    <div class="container">
+      <div class="row">
+        <% @cocktails.each do |cocktail| %>
+          <div class="col-6 col-md-4 col-xl-3">
+            <div class="recipe-card">
+              <div class="recipe-card-image"></div>
+              <%= link_to cocktail.name, cocktail_path(cocktail), class: "recipe-card-link" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</main>
+
 
