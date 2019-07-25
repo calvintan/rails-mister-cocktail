@@ -1,4 +1,6 @@
 <div class="container">
+
+  <%= link_to "Cancel", cocktail_path(@cocktail) %>
   <h1>Add a new ingredient</h1>
   <%= simple_form_for [@cocktail, @dose] do |f| %>
     <%= f.input :description %>
