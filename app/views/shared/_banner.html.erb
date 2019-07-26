@@ -1,0 +1,34 @@
+<section class="banner" style="background: url(<%= image_path "bg.jpg" %>) no-repeat; background-size: cover;">
+
+  <div class="banner-wrapper">
+    <h1>Fruit Punch</h1>
+    <h2>Search our library of fruity recipes</h2>
+    <div class="search-wrapper">
+      <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :name, input_html: {value: "", type: "search"}, placeholder: 'Search for a recipe', label: false %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+    <div class="categories">
+      <h2>Or select a type of recipe</h2>
+      <ul class="categories-list">
+        <li><%= link_to "🍎", ingredients_path("Gin") %></li>
+        <li><%= link_to "🍐", ingredients_path("pear") %></li>
+        <li><%= link_to "🍊", ingredients_path("orange") %></li>
+        <li><%= link_to "🍋", ingredients_path("lemon") %></li>
+        <li><%= link_to "🍌", ingredients_path("banana") %></li>
+        <li><%= link_to "🍉", ingredients_path("watermelon") %></li>
+        <li><%= link_to "🍇", ingredients_path("grapes") %></li>
+        <li><%= link_to "🍓", ingredients_path("strawberry") %></li>
+        <li><%= link_to "🍒", ingredients_path("cherry") %></li>
+        <li><%= link_to "🍍", ingredients_path("pineapple") %></li>
+        <li><%= link_to "🥥", ingredients_path("coconut") %></li>
+        <li><%= link_to "🥝", ingredients_path("kiwi") %></li>
+        <li><%= link_to "🍅", ingredients_path("tomato") %></li>
+        <li><%= link_to "🥑", ingredients_path("avocado") %></li>
+      </ul>
+    </div>
+
+  </div>
+</section>

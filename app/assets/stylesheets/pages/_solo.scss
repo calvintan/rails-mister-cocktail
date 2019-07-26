@@ -1,0 +1,44 @@
+.recipe-card-image {
+  background: grey;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .recipe-card-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.solo-recipe {
+  p {
+    letter-spacing: .2px;
+  }
+
+  h1 {
+    margin-top: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  li {
+    line-height: 1.8;
+  }
+
+  .solo-recipe-desc {
+    font-size: 1.125rem;
+  }
+
+  .solo-recipe-subhead {
+    font-size: 1.125rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+}

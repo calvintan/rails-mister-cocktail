@@ -1,0 +1,11 @@
+.ribbon {
+  text-align: center;
+  padding: 20px;
+  background: #f8f8f8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+
+  p {
+    margin-bottom: 0;
+    font-family: $headers-font;
+  }
+}

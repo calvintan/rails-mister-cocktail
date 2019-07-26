@@ -1,0 +1,14 @@
+.btn-back {
+  display: inline-block;
+  margin: 1rem;
+  margin-left: 10px;
+  font-family: $headers-font;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-edit i, .btn-delete i {
+  margin-left: 5px;
+}
