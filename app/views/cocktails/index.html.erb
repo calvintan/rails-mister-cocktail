@@ -3,7 +3,13 @@
     <div class="banner-wrapper">
       <h1>Fruit Punch</h1>
       <h2>Browse our library of fruity recipes</h2>
-      <input type="search" placeholder="Search by recipe or ingredient">
+      <!-- <input type="search" placeholder="Search by recipe or ingredient"> -->
+      <div class="search-wrapper">
+        <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+          <%= f.input :name, input_html: {value: "", type: "search"}, placeholder: 'Search for a recipe', label: false %>
+          <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </section>
   <section class="ribbon">
