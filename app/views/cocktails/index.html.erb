@@ -1,8 +1,9 @@
 <main class="homepage">
-  <section class="banner">
+  <section class="banner" style="background: url(<%= image_path "bg" %>) no-repeat ; background-size: cover;">
+
     <div class="banner-wrapper">
       <h1>Fruit Punch</h1>
-      <h2>Browse our library of fruity recipes</h2>
+      <h2>Search our library of fruity recipes</h2>
       <!-- <input type="search" placeholder="Search by recipe or ingredient"> -->
       <div class="search-wrapper">
         <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
@@ -10,8 +11,30 @@
           <%= f.submit "Search", class: "btn btn-primary" %>
         <% end %>
       </div>
+
+      <div class="filters">
+        <h2>Or choose a fruit recipe</h2>
+        <ul class="categories">
+        <li><%= link_to "🍎", ingredients_path("apple") %></li>
+        <li><%= link_to "🍐", ingredients_path("pear") %></li>
+        <li><%= link_to "🍊", ingredients_path("orange") %></li>
+        <li><%= link_to "🍋", ingredients_path("lemon") %></li>
+        <li><%= link_to "🍌", ingredients_path("banana") %></li>
+        <li><%= link_to "🍉", ingredients_path("watermelon") %></li>
+        <li><%= link_to "🍇", ingredients_path("grapes") %></li>
+        <li><%= link_to "🍓", ingredients_path("strawberry") %></li>
+        <li><%= link_to "🍒", ingredients_path("cherry") %></li>
+        <li><%= link_to "🍍", ingredients_path("pineapple") %></li>
+        <li><%= link_to "🥥", ingredients_path("coconut") %></li>
+        <li><%= link_to "🥝", ingredients_path("kiwi") %></li>
+        <li><%= link_to "🍅", ingredients_path("tomato") %></li>
+        <li><%= link_to "🥑", ingredients_path("avocado") %></li>
+      </ul>
+      </div>
+
     </div>
   </section>
+
   <section class="ribbon">
     <p>Have a recipe to share? <%= link_to "Contribute a recipe here", new_cocktail_path, class: "" %></p>
   </section>
@@ -21,7 +44,8 @@
         <% @cocktails.each do |cocktail| %>
           <div class="col-6 col-md-4 col-xl-3">
             <div class="recipe-card">
-              <div class="recipe-card-image"></div>
+              <%= cl_image_tag cocktail.photo, class: "recipe-card-image" %>
+              <!-- <div class="recipe-card-image"></div> -->
               <%= link_to cocktail.name, cocktail_path(cocktail), class: "recipe-card-link" %>
             </div>
           </div>

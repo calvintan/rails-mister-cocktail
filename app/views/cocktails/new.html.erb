@@ -1,11 +1,12 @@
-<div class="container">
-
-  <i class="fas fa-chevron-left"></i><%= link_to "Back to Recipes", cocktails_path, class: "btn-back" %>
-  <h1>Add a new recipe</h1>
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Add recipe" %>
-  <% end %>
-</div>
+<main class="add-new">
+  <div class="container">
+    <i class="fas fa-chevron-left"></i><%= link_to "Back to Recipes", cocktails_path, class: "btn-back" %>
+    <h1>Add a new recipe</h1>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit "Add recipe", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</main>

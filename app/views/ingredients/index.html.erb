@@ -1,0 +1,45 @@
+<main class="homepage">
+  <section class="banner">
+    <div class="banner-wrapper">
+      <h1>Fruit Punch</h1>
+      <h2>Browse our library of fruity recipes</h2>
+      <!-- <input type="search" placeholder="Search by recipe or ingredient"> -->
+      <div class="search-wrapper">
+        <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+          <%= f.input :name, input_html: {value: "", type: "search"}, placeholder: 'Search for a recipe', label: false %>
+          <%= f.submit "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section class="all-recipes">
+    <div class="container">
+      <% if @cocktails.empty? %>
+        <div class="no-recipe">
+          <p>No recipes found for this ingredient, try another fruit perhaps? 😢</p>
+        </div>
+
+        <% else %>
+
+        <div class="filter-option">
+          <span ><%= @ingredient.name %> recipes</span>
+          <%= link_to "View all recipes", cocktails_path, class: "btn btn-outline-primary" %>
+        </div>
+
+        <div class="row">
+          <% @cocktails.each do |cocktail| %>
+            <div class="col-6 col-md-4 col-xl-3">
+              <div class="recipe-card">
+                <%= cl_image_tag cocktail.photo, class: "recipe-card-image" %>
+                <!-- <div class="recipe-card-image"></div> -->
+                <%= link_to cocktail.name, cocktail_path(cocktail), class: "recipe-card-link" %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </section>
+</main>

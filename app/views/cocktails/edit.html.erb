@@ -1,11 +1,11 @@
-<main>
+<main class="add-new">
   <div class="container">
     <i class="fas fa-chevron-left"></i><%= link_to "Cancel", cocktail_path(@cocktail), class: "btn-back" %>
     <h1>Edit <%= @cocktail.name %></h1>
 
     <%= simple_form_for(@cocktail) do |f| %>
       <%= f.input :name %>
-      <%= f.submit %>
+      <%= f.submit "Save edits", class: "btn btn-primary" %>
     <% end %>
   </div>
 </main>

@@ -1,4 +1,5 @@
 .banner {
+  position: relative;
   display: flex;
   min-height: 300px;
   padding: 50px 20px;
@@ -7,8 +8,19 @@
   justify-content: center;
   text-align: center;
 
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   background: black;
+  //   opacity: .1;
+  //   position: absolute;
+  // }
+
   .banner-wrapper {
     width: 480px;
+    z-index: 1;
   }
 
   h1 {
